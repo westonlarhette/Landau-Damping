@@ -17,7 +17,7 @@ from scipy.signal import find_peaks
 
 
 ######## Defining Parameters ########
-
+# Some parameters are normalized to order unity
 N = 100000      # Number of particles
 boxsize = 10    # Physical space of simulation
 cells = 400     # Number of cells in the grid
@@ -46,25 +46,25 @@ def getAcc( pos, cells, boxsize, n0, Grad_mtx, Lapl_mtx ):
         # initialize Electron number density onto mesh by placing particles into the
         # nearest cells (j & j+1, with proper weights) and normalizing:
         j = np.floor(pos / dx).astype(int)
-        jp1 = j + 1 # initializng j + 1 cells
+        jp1 = j + 1
         weight_j = (jp1 * dx - pos) / dx 
         weight_jp1 = (pos - j * dx) / dx
 
-        jp1 = np.mod(jp1,cells) # ensures periodic boundary conditions - if
-                                # jp1 gets to 400, this makes it zero instead
+        jp1 = np.mod(jp1,cells) # ensures periodic boundary conditions
 
 
         # initializing particle density based off of meshgrid weights at j cells
         n = np.bincount(j[:,0], weights = weight_j[:,0], minlength = cells)
         # adding weights from j + 1 cells
         n += np.bincount(jp1[:,0], weights = weight_jp1[:,0], minlength = cells)
+        # normalizing density
         n *= n0 * boxsize / ( N * dx)
         
         # solve Poisson's equation for electric potential: laplacian(phi) = n-n0
         phi_grid = spsolve(Lapl_mtx, n - n0, permc_spec="MMD_AT_PLUS_A")
         
         # apply derivative to get electric field
-        E_grid = -Grad_mtx @ phi_grid # this gives electric field at each gridpoint/cell
+        E_grid = -Grad_mtx @ phi_grid # gives electric field at each gridpoint/cell
         # below changes E_grid to calculate electric field at each particle
         E = weight_j * E_grid[j] + weight_jp1 * E_grid[jp1]
 
@@ -118,11 +118,8 @@ Lapl_mtx[cells-1,0]  = 1
 Lapl_mtx /= dx**2
 Lapl_mtx = sp.csr_matrix(Lapl_mtx)
 
-
-
 # calculate initial gravitational acceleration:
 acc, E_grid = getAcc(pos, cells, boxsize, n0, Grad_mtx, Lapl_mtx)
-
 
 # number of timesteps/frames
 Nt = int(np.ceil(tEnd / dt))
@@ -216,6 +213,7 @@ landau_ani = FuncAnimation(figure, update, frames = Nt, interval = 50)
 plt.show()
 
 
+
 #%%
 # Switch to inline plotting
 matplotlib.use('module://ipykernel.pylab.backend_inline')
@@ -241,14 +239,16 @@ plt.ylabel('Energy stored in electric field (~$E^2$)')
 plt.legend()
 plt.title(fr'Energy Loss of Oscillation due to Landau Damping: $k = {k}, A = {A}$')
 plt.grid(True)
-plt.savefig('Landau Damping')
 plt.show()
+
+
 
 #%%
 matplotlib.use('module://ipykernel.pylab.backend_inline')
 
 
 ##### Plotting E(x) snapshots at each cell for different times #####
+
 
 # Defining x-axis array of cells
 x_axis_cells = np.arange(400) 
@@ -258,12 +258,12 @@ plt.plot(x_axis_cells, E_gridarray[0,:], 'black', label = 't = 0')
 plt.plot(x_axis_cells, E_gridarray[1,:], 'blue', label = 't = T/50')
 plt.plot(x_axis_cells, E_gridarray[2,:], 'red', label = 't = T/2')
 plt.plot(x_axis_cells, E_gridarray[3,:], 'green', label = 't = T')
-plt.grid(True)
 plt.title(fr'E(x) at different time snapshots: $k = {k}, A = {A}$')
 plt.xlabel('x (cell number)')
 plt.ylabel('E')
 plt.xlim([0,400])
 plt.legend()
+plt.grid(True)
 plt.show()
 
 
