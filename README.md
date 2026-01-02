@@ -8,7 +8,7 @@ This is a github repository of Particle-In-Cell Python code for a 1D electrostat
     </p>
 </div
 
-Ions in the plasma are assumed to be fixed while only electrons can move in the simulation. The gradient and Laplacian of the electric potential are approximated with the Finite Difference Method, then written in matrix form. Particle density is calcualted with numpy.bincount
+Ions in the plasma are assumed to be fixed while only electrons can move in the simulation. The gradient and Laplacian of the electric potential are approximated with the Finite Difference Method, then written in matrix form. Particle density is calculated with numpy.bincount
 - Time integration method - Leapfrog
 - Interpolation method - Cloud-In-Cell
 - Boundary Conditions - Periodic
