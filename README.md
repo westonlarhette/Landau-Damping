@@ -4,6 +4,6 @@ This is a github repository of Particle-In-Cell Python code for a 1D electrostat
 <div>
     <p float = 'left'>
         <img src="/result/landau_phase_space1.gif"  width="48.5%">
-        <img src="/result/landau_energy_loss1.gif"  width="48.5%">
+        <img src="/result/landau_energy_loss1.png"  width="48.5%">
     </p>
 </div
