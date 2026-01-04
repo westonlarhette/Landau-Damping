@@ -1,6 +1,6 @@
 # Electrostatic Landau-Damping Particle-In-Cell Simulation 
 
-This simulation demonstrates Landau damping, a fundamental collisionless damping mechanism in plasmas discovered theoretically by Lev Landau in 1946. The code implements a 1D electrostatic Particle-in-Cell (PIC) method to observe how plasma waves lose energy through wave-particle resonance.
+This simulation demonstrates Landau damping, a fundamental collisionless damping mechanism in plasmas discovered theoretically by Lev Landau in 1946. The code implements a 1D electrostatic Particle-In-Cell (PIC) method to observe how plasma waves lose energy through wave-particle resonance.
 <div>
     <p float = 'left'>
         <img src="/result/landau_phase_space.gif"  width="48.5%">
