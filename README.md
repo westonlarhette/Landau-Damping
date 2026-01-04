@@ -38,6 +38,7 @@ The code will produce three separate graphs to demonstrate Landau damping. The f
     </p>
 </div
 
+
 #### Wave Spatial Evolution ####
 <div>
     <p float = 'left'>
