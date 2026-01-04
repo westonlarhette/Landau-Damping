@@ -33,15 +33,15 @@ The code will produce three separate graphs to demonstrate Landau damping. The f
 #### Electric Field Energy Decay ####
 <div>
     <p float = 'left'>
-        <img src="/result/landau_energy_loss.gif"  width="48.5%">
-        <img src="/result/landau_energy_loss1.gif"  width="48.5%">
+        <img src="/result/landau_energy_loss.png"  width="48.5%">
+        <img src="/result/landau_energy_loss1.png"  width="48.5%">
     </p>
 </div
 
 #### Wave Spatial Evolution ####
 <div>
     <p float = 'left'>
-        <img src="/result/landau_E_x.gif"  width="48.5%">
-        <img src="/result/landau_E_x1.gif"  width="48.5%">
+        <img src="/result/landau_E_x.png"  width="48.5%">
+        <img src="/result/landau_E_x1.png"  width="48.5%">
     </p>
 </div
