@@ -3,15 +3,15 @@
 This is a github repository of Particle-In-Cell Python code for a 1D electrostatic plasma. It calculates the motion of electrons under the Poisson-Maxwell equation with an initial position perturbation that becomes a damped oscillation. 
 <div>
     <p float = 'left'>
-        <img src="/result/landau_phase_space1.gif"  width="50.5%">
-        <img src="/result/landau_energy_loss1.png"  width="48.5%">
+        <img src="/result/landau_phase_space.gif"  width="48.5%">
+        <img src="/result/landau_phase_space1.png"  width="48.5%">
     </p>
 </div
 
 Landau damping is a phenomenon where an electromagnetic wave traveling through a plasma loses energy to particles with velocities slightly less than the wave's phase velocity by accelerating them. In an ideal plasma, the number of particles with velocities slightly less than the wave phase velocity is larger than the number with velocities slightly greater, and the net result is damping of the wave that occurs due to non-collisional interactions.
 
 ## Simulation
-Ions in the plasma are assumed to be fixed while only electrons can move in the simulation. The gradient and Laplacian of the electric potential are approximated with the Finite Difference Method, then written in matrix form. Particle density is calculated with numpy.bincount
+Ions in the plasma are assumed to be fixed while only electrons can move in the simulation. The gradient and Laplacian of the electric potential are approximated with the Finite Difference Method, then written in matrix form using SciPy. Particle density is calculated with numpy.bincount
 - Time integration method - Leapfrog
 - Interpolation method - Cloud-In-Cell
 - Boundary Conditions - Periodic
@@ -26,3 +26,8 @@ Some plasma parameters are normalized to order unity
 - vth = 0.5 - Thermal velocity
 - A = 0.15 - Strength of perturbation/oscillation
 - k = 1 - Wavenumber of position oscillation
+
+### Output
+The code will produce three separate graphs to demonstrate Landau damping. The first is an animated graph showing the phase space of the particles. Note that due to periodic boundary conditions, the walls of the animation "wrap in" on themselves. The second graph plots the decay of the energy stored in the net electric field, and the thrid graph plots the spatial evolution of the electric field to demonstrate decay of the wave amplitude.
+
+#### Electric Field Energy Decay ####
