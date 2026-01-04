@@ -31,6 +31,7 @@ Some plasma parameters are normalized to order unity
 The code will produce three separate graphs to demonstrate Landau damping. The first is an animated graph showing the phase space of the particles (displayed at top). Note that due to periodic boundary conditions, the walls of the animation "wrap in" on themselves. The second graph plots the decay of the energy stored in the net electric field, and the third graph plots the spatial evolution of the electric field to demonstrate decay of the wave amplitude. Experimenting with different values of the wave parameters, $k$ and $A$, can yield interesting results in all three graphs.
 
 #### Electric Field Energy Decay ####
+
 <div>
     <p float = 'left'>
         <img src="/result/landau_energy_loss.png"  width="48.5%">
@@ -39,7 +40,9 @@ The code will produce three separate graphs to demonstrate Landau damping. The f
 </div
 
 
+
 #### Wave Spatial Evolution ####
+
 <div>
     <p float = 'left'>
         <img src="/result/landau_E_x.png"  width="48.5%">
