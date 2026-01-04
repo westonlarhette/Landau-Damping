@@ -4,7 +4,7 @@ This is a github repository of Particle-In-Cell Python code for a 1D electrostat
 <div>
     <p float = 'left'>
         <img src="/result/landau_phase_space.gif"  width="48.5%">
-        <img src="/result/landau_phase_space1.png"  width="48.5%">
+        <img src="/result/landau_phase_space1.gif"  width="48.5%">
     </p>
 </div
 
@@ -28,6 +28,20 @@ Some plasma parameters are normalized to order unity
 - k = 1 - Wavenumber of position oscillation
 
 ### Output
-The code will produce three separate graphs to demonstrate Landau damping. The first is an animated graph showing the phase space of the particles. Note that due to periodic boundary conditions, the walls of the animation "wrap in" on themselves. The second graph plots the decay of the energy stored in the net electric field, and the thrid graph plots the spatial evolution of the electric field to demonstrate decay of the wave amplitude.
+The code will produce three separate graphs to demonstrate Landau damping. The first is an animated graph showing the phase space of the particles (displayed at top). Note that due to periodic boundary conditions, the walls of the animation "wrap in" on themselves. The second graph plots the decay of the energy stored in the net electric field, and the third graph plots the spatial evolution of the electric field to demonstrate decay of the wave amplitude. Experimenting with different values of the wave parameters, $k$ and $A$, can yield interesting results in all three graphs.
 
 #### Electric Field Energy Decay ####
+<div>
+    <p float = 'left'>
+        <img src="/result/landau_energy_loss.gif"  width="48.5%">
+        <img src="/result/landau_energy_loss1.gif"  width="48.5%">
+    </p>
+</div
+
+#### Wave Spatial Evolution ####
+<div>
+    <p float = 'left'>
+        <img src="/result/landau_E_x.gif"  width="48.5%">
+        <img src="/result/landau_E_x1.gif"  width="48.5%">
+    </p>
+</div
