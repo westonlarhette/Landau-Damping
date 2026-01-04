@@ -10,6 +10,7 @@ This is a github repository of Particle-In-Cell Python code for a 1D electrostat
 
 Landau damping is a phenomenon where an electromagnetic wave traveling through a plasma loses energy to particles with velocities slightly less than the wave's phase velocity by accelerating them. In an ideal plasma, the number of particles with velocities slightly less than the wave phase velocity is larger than the number with velocities slightly greater, and the net result is damping of the wave that occurs due to non-collisional interactions.
 
+## Simulation
 Ions in the plasma are assumed to be fixed while only electrons can move in the simulation. The gradient and Laplacian of the electric potential are approximated with the Finite Difference Method, then written in matrix form. Particle density is calculated with numpy.bincount
 - Time integration method - Leapfrog
 - Interpolation method - Cloud-In-Cell
